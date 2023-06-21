@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project by Nim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="marquee">Welcome to IndWorks</h1>
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <input id="name" type="text" placeholder="Username" required>
+            <input id="pass" type="password" placeholder="Password" required>
+            <input onclick="checkNameLength()" type = "submit" value="Login"></input>
+        </form>
+    </div>
+
+    <script>
+        function checkNameLength() {
+            var nameInput = document.getElementById('name');
+            var name = nameInput.value;
+            var length = name.length;
+            var check1 = 0 , check2 = 0;
+            if (length >= 3 && length <= 20) {
+                check1 = 1;
+            } else {
+                alert("Name length should be between 3 and 20 characters.");
+            }
+            var pass = document.getElementById('pass').value;
+            var plen = pass.length;
+            if(plen >= 6 && plen <= 10)
+            {
+                var a = 0 , b = 0 , c = 0 , d = 0;
+                for(var i = 0 ; i < plen ; i++)
+                {
+                    if(pass[i] >= '0' && pass[i] <= '10')
+                    {
+                        a = 1;
+                    }
+                    if(pass[i] >= 'a' && pass[i] <= 'z')
+                    {
+                        b = 1;
+                    }
+                    if(pass[i] >= 'A' && pass[i] <= 'Z')
+                    {
+                        c = 1;
+                    }
+                    if(pass[i] == '@' || pass[i] == '#' || pass[i] == '$')
+                    {
+                        d = 1;
+                    }
+                }
+                if(a == 1 && b == 1 && c == 1 && d == 1)
+                {
+                    check2 = 1;
+                }
+            }
+            else
+            {
+                alert("Password length should be between 6 and 10 character and should include atleast one lowercase , uppercase, digit and special symbol");
+            }
+
+            if(check1 == 1 && check2 == 1 )
+            {
+                alert("Successfully Login");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+*{
+    margin : 0px;
+    background-color: #ffcccc;
+}
+.marquee
+{
+    width : 80%;
+    color : #330000; 
+    overflow: hidden;
+    animation : marquee 8s linear infinite;
+    justify-content: center;
+}
+@keyframes marquee 
+{
+    0%{transform: translateX(100%) ; }
+    100%{transform: translateX(-100%) ; }
+    
+}
+.container {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  .container h2 {
+    text-align: center;
+  }
+
+  .container input[type="text"],
+  .container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .container input[type="submit"] {
+    width: 108%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #330000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .container input[type="submit"]:hover {
+    background-color: #ff8080;
+    font-weight: bold;
+    color: #330000;
+  }
+  
